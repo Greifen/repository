@@ -3,6 +3,7 @@ package model;
 public class Spieler {
 	
 	protected Schachtel schachtel;
+	protected String name ;
 	
 	/**
 	 * @param schachtel
@@ -11,6 +12,18 @@ public class Spieler {
 		super();
 		this.schachtel = schachtel;
 	}
+	
+
+	/**
+	 * @param schachtel
+	 * @param name
+	 */
+	public Spieler(Schachtel schachtel, String name) {
+		super();
+		this.schachtel = schachtel;
+		this.name = name;
+	}
+
 
 	/**
 	 * Man kann nur 1-3 Hoelzer aus Schachtel nehmen, falls noch genügend Hoelzer in der Schachtel vorhanden sind."
@@ -31,5 +44,14 @@ public class Spieler {
 			schachtel.setAnzahlHoelzer(schachtel.getAnzahlHoelzer() - anzahlHoelzer);
 			return 0;
 		}
+	}
+	
+	public String getName() {
+		return name;
+	}
+
+
+	public void setName(String name) {
+		this.name = name;
 	}
 }

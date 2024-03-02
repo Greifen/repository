@@ -7,21 +7,22 @@ import java.util.Scanner;
  */
 public class Spiel {
 	private Schachtel schachtel;
-	private Spieler spieler;
+	private Spieler spieler1;
 	private Spieler spieler2;
 	private Spieler aktuellerSpieler;
 	private int userEingabe;
 	
 	/**
-	 * @param spieler
+	 * @param spieler1
 	 * @param spieler2
 	 * @param schachtel
 	 */
 	public Spiel() {
 		super();
 		this.schachtel = new Schachtel();
-		this.spieler = new Spieler(schachtel);
-		this.spieler2 = new Spieler(schachtel);
+		this.spieler1 = new Spieler(schachtel, "Spieler 1");
+		this.spieler2 = new Spieler(schachtel, "Spieler 2");
+		aktuellerSpieler=spieler1;
 	}
 	
 	
@@ -54,8 +55,8 @@ public class Spiel {
 	 */
 	private void starteKonsole() {
 		Scanner s = new Scanner(System.in);
-		System.out.println("NIM-Spiel: Spieler 1 setzt die Anzahl der Hoelzer fest. Anschließend werden abwechselnd 1-3 Hoelzer genommen. Wer das letzte Holz zieht verliert.");
-		System.out.println("Spieler 1: Wähle eine Zahl von 10-40 zum Befüllen der Schachtel.");
+		System.out.println("NIM-Spiel: "+ getAktuellerSpieler().getName() + " setzt die Anzahl der Hoelzer fest. Anschließend werden abwechselnd 1-3 Hoelzer genommen. Wer das letzte Holz zieht verliert.");
+		System.out.println(getAktuellerSpieler().getName() + ": Wähle eine Zahl von 10-40 zum Befüllen der Schachtel.");
 		do 
 		{
 			userEingabe = s.nextInt();
@@ -63,14 +64,7 @@ public class Spiel {
 		waechselAktuellenSpieler(getSpieler());
 		while (!istBeendet())
 		{
-			if (getAktuellerSpieler().equals(getSpieler()))
-			{
-				System.out.println("Spieler 1: Wähle eine Zahl von 1-3 zum Nehmen aus der Schachtel, falls noch genügend Hoelzer vorhanden sind.");
-			}
-			else
-			{
-				System.out.println("Spieler 2: Wähle eine Zahl von 1-3 zum Nehmen aus der Schachtel, falls noch genügend Hoelzer vorhanden sind.");
-			}
+			System.out.println(getAktuellerSpieler().getName() + ": Wähle eine Zahl von 1-3 zum Nehmen aus der Schachtel, falls noch genügend Hoelzer vorhanden sind.");
 			
 			do 
 			{
@@ -79,15 +73,7 @@ public class Spiel {
 			waechselAktuellenSpieler(getAktuellerSpieler());
 			System.out.println("Anzahl Hoelzer: " +getSchachtel().getAnzahlHoelzer());
 		}
-		
-		if (getAktuellerSpieler().equals(getSpieler()))
-		{
-			System.out.println("Spieler 1 hat gewonnen.");
-		}
-		else
-		{
-			System.out.println("Spieler 2 hat gewonnen.");
-		}
+		System.out.println(getAktuellerSpieler().getName() +" hat gewonnen.");
 	}
 
 	/**
@@ -118,7 +104,7 @@ public class Spiel {
 	}
 
 	public Spieler getSpieler() {
-		return spieler;
+		return spieler1;
 	}
 
 	public Spieler getSpieler2() {
