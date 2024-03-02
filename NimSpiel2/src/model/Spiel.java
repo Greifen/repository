@@ -29,7 +29,7 @@ public class Spiel {
 	public static void main(String[] args) {
 //		new Spiel().starteStatisch();
 		new Spiel().starteKonsole();
-		
+
 	
 	}
 	
@@ -62,7 +62,7 @@ public class Spiel {
 		System.out.print("Spieler 2: ");
 		spieler2.setName(s.next());
 */
-		
+		//befülleSchachtel
 		System.out.println("NIM-Spiel: "+ getAktuellerSpieler().getName() + " setzt die Anzahl der Hoelzer fest. Anschließend werden abwechselnd 1-3 Hoelzer genommen. Wer das letzte Holz zieht verliert.");
 		System.out.println(getAktuellerSpieler().getName() + ": Wähle eine Zahl von 10-40 zum Befüllen der Schachtel.");
 		do 
@@ -70,6 +70,8 @@ public class Spiel {
 			userEingabe = s.nextInt();
 		} while (getSchachtel().befuelle(userEingabe)!=0);
 		waechselAktuellenSpieler(getSpieler());
+		
+		//nehmen
 		while (!istBeendet())
 		{
 			System.out.println(getAktuellerSpieler().getName() + ": Wähle eine Zahl von 1-3 zum Nehmen aus der Schachtel, falls noch genügend Hoelzer vorhanden sind.");
@@ -80,8 +82,11 @@ public class Spiel {
 			waechselAktuellenSpieler(getAktuellerSpieler());
 			System.out.println(getSchachtel().toString());
 		}
+		
+		//gibGewinnerAn
 		System.out.println(getAktuellerSpieler().getName() +" hat gewonnen.");
 	}
+	
 
 	/**
 	 * Testrun statisch ohne View
@@ -122,6 +127,10 @@ public class Spiel {
 		return schachtel;
 	}
 	
+	/**
+	 * Das Spiel ist erst beendet, wenn alle Hoelzer aus der Schachtel genommen wurden.
+	 * @return
+	 */
 	public boolean istBeendet() {
 		return getSchachtel().getAnzahlHoelzer() == 0;
 	}

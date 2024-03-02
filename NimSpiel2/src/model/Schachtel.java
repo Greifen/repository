@@ -30,6 +30,10 @@ public class Schachtel {
 		this.anzahlHoelzer = anzahlHoelzer;
 	}
 	
+	public void konsolenAusgabe() {
+		System.out.println("Anzahl Hoelzer: " + anzahlHoelzer);
+	}
+	
 	
 	@Override
 	public String toString() {
