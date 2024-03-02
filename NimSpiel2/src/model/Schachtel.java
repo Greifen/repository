@@ -30,7 +30,7 @@ public class Schachtel {
 		this.anzahlHoelzer = anzahlHoelzer;
 	}
 	
-	public void konsolenAusgabe() {
+	public void print() {
 		System.out.println("Anzahl Hoelzer: " + anzahlHoelzer);
 	}
 	

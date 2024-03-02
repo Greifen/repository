@@ -13,7 +13,6 @@ public class Spieler {
 		this.schachtel = schachtel;
 	}
 	
-
 	/**
 	 * @param schachtel
 	 * @param name
