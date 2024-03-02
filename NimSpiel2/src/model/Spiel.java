@@ -77,7 +77,6 @@ public class Spiel {
 				System.out.println("Spieler 2: Wähle eine Zahl von 1-3 zum Nehmen aus der Schachtel, falls noch genügend Hoelzer vorhanden sind.");
 			}
 			
-
 			do 
 			{
 				userEingabe = s.nextInt();
