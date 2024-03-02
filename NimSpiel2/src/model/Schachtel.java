@@ -30,6 +30,12 @@ public class Schachtel {
 		this.anzahlHoelzer = anzahlHoelzer;
 	}
 	
+	
+	@Override
+	public String toString() {
+		return "Anzahl Hoelzer: " + anzahlHoelzer;
+	}
+
 	/**
 	 * 
 	 * @param anzahlHoelzer 

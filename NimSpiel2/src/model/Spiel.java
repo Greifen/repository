@@ -78,7 +78,7 @@ public class Spiel {
 				userEingabe = s.nextInt();
 			} while (getAktuellerSpieler().nehmen(userEingabe)!=0);
 			waechselAktuellenSpieler(getAktuellerSpieler());
-			System.out.println("Anzahl Hoelzer: " +getSchachtel().getAnzahlHoelzer());
+			System.out.println(getSchachtel().toString());
 		}
 		System.out.println(getAktuellerSpieler().getName() +" hat gewonnen.");
 	}
