@@ -11,7 +11,6 @@ public class Spiel {
 	private Spieler spieler2;
 	private Spieler aktuellerSpieler;
 	private int userEingabe;
-	private int fehlerNehmen;
 	
 	/**
 	 * @param spieler
