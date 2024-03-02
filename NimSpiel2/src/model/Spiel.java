@@ -11,6 +11,7 @@ public class Spiel {
 	private Spieler spieler2;
 	private Spieler aktuellerSpieler;
 	private int userEingabe;
+	private int fehlerNehmen;
 	
 	/**
 	 * @param spieler
@@ -67,18 +68,18 @@ public class Spiel {
 		waechselAktuellenSpieler(getSpieler());
 		while (!istBeendet())
 		{
+			if (getAktuellerSpieler().equals(getSpieler()))
+			{
+				System.out.println("Spieler 1: Wähle eine Zahl von 1-3 zum Nehmen aus der Schachtel, falls noch genügend Hoelzer vorhanden sind.");
+			}
+			else
+			{
+				System.out.println("Spieler 2: Wähle eine Zahl von 1-3 zum Nehmen aus der Schachtel, falls noch genügend Hoelzer vorhanden sind.");
+			}
 			
+
 			do 
 			{
-				// TODO: wenn fehlermeldung dann nicht nochmal den Text anzeigen.
-				if (getAktuellerSpieler().equals(getSpieler()))
-				{
-					System.out.println("Spieler 1: Wähle eine Zahl von 1-3 zum Nehmen aus der Schachtel, falls noch genügend Hoelzer vorhanden sind.");
-				}
-				else
-				{
-					System.out.println("Spieler 2: Wähle eine Zahl von 1-3 zum Nehmen aus der Schachtel, falls noch genügend Hoelzer vorhanden sind.");
-				}
 				userEingabe = s.nextInt();
 			} while (getAktuellerSpieler().nehmen(userEingabe)!=0);
 			waechselAktuellenSpieler(getAktuellerSpieler());

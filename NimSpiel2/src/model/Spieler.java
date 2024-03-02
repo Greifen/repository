@@ -30,7 +30,7 @@ public class Spieler {
 			}
 			else
 			{
-				System.err.println("So viele Hoelzer sind nicht vorhanden");
+				System.err.println("So viele Hoelzer sind nicht vorhanden.");
 				return 2;
 			}
 				
