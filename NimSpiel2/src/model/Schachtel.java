@@ -26,9 +26,26 @@ public class Schachtel {
 		return anzahlHoelzer;
 	}
 
-	//TODO: am Spielanfang darf nur 10-40 gesetzt werden. Extra eine andere Methode????
 	public void setAnzahlHoelzer(int anzahlHoelzer) {
 		this.anzahlHoelzer = anzahlHoelzer;
+	}
+	
+	/**
+	 * 
+	 * @param anzahlHoelzer 
+	 * @return 1 Fehlermeldung: Es könnnen nur 10 bis 40 Holzer hineingetan werden
+	 * 0 erfolgreich befuellt.
+	 */
+	public int befuelle(int anzahlHoelzer) {
+		if(!(anzahlHoelzer>=10 && anzahlHoelzer<=40)) {
+			setAnzahlHoelzer(anzahlHoelzer);
+			System.err.println("Mit nur 10-40 Hoelzer befüllen.");
+			return 1;
+		}	
+		else {
+			this.anzahlHoelzer = anzahlHoelzer;
+			return 0;
+		}
 	}
 
 	

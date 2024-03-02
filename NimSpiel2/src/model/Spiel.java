@@ -55,15 +55,11 @@ public class Spiel {
 	private void starteKonsole() {
 		Scanner s = new Scanner(System.in);
 		System.out.println("NIM-Spiel: Spieler 1 setzt die Anzahl der Hoelzer fest. Anschließend werden abwechselnd 1-3 Hoelzer genommen. Wer das letzte Holz zieht verliert.");
-		System.out.println("Spieler1: Wähle eine Zahl von 10-40 zum Befüllen der Schachtel.");
-		userEingabe = s.nextInt();
-		while (!(userEingabe>=10 && userEingabe<=40))
+		System.out.println("Spieler 1: Wähle eine Zahl von 10-40 zum Befüllen der Schachtel.");
+		do 
 		{
-			System.out.println("Spieler1: Wähle eine Zahl von 10-40 zum Befüllen der Schachtel.");
 			userEingabe = s.nextInt();
-		}
-		getSchachtel().setAnzahlHoelzer(userEingabe);
-		
+		} while (getSchachtel().befuelle(userEingabe)!=0);
 		waechselAktuellenSpieler(getSpieler());
 		while (!istBeendet())
 		{

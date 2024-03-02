@@ -15,7 +15,7 @@ public class Spieler {
 	/**
 	 * Man kann nur 1-3 Hoelzer aus Schachtel nehmen, falls noch genügend Hoelzer in der Schachtel vorhanden sind."
 	 * @param AnzahlHoelzer
-	 * @return Fehlermeldung: Man kann nur 1-3 Hoelzer aus Schachtel nehmen.
+	 * @return 1 Fehlermeldung: Man kann nur 1-3 Hoelzer aus Schachtel nehmen.
 	 * 2 Fehlermeldung: Es sind nicht genügend Hoelzer in der Schachtel vorhanden.
 	 * 0 Die Holzer wurden erfolgreich aus der Schachtel genommen.
 	 */
