@@ -67,9 +67,10 @@ public class Spiel {
 		waechselAktuellenSpieler(getSpieler());
 		while (!istBeendet())
 		{
-			// TODO: wie gehe ich clever mit Fehleingaben um??? Ruiniert die lesbarkeit meines Codes
+			
 			do 
 			{
+				// TODO: wenn fehlermeldung dann nicht nochmal den Text anzeigen.
 				if (getAktuellerSpieler().equals(getSpieler()))
 				{
 					System.out.println("Spieler 1: Wähle eine Zahl von 1-3 zum Nehmen aus der Schachtel, falls noch genügend Hoelzer vorhanden sind.");
@@ -79,8 +80,7 @@ public class Spiel {
 					System.out.println("Spieler 2: Wähle eine Zahl von 1-3 zum Nehmen aus der Schachtel, falls noch genügend Hoelzer vorhanden sind.");
 				}
 				userEingabe = s.nextInt();
-			} while (!((userEingabe>=1 && userEingabe<=3)&&(schachtel.getAnzahlHoelzer() - userEingabe>=0)));
-			getAktuellerSpieler().nehmen(userEingabe);
+			} while (getAktuellerSpieler().nehmen(userEingabe)!=0);
 			waechselAktuellenSpieler(getAktuellerSpieler());
 			System.out.println("Anzahl Hoelzer: " +getSchachtel().getAnzahlHoelzer());
 		}
