@@ -34,7 +34,7 @@ public class Spieler {
 	public int nehmen(int anzahlHoelzer)
 	{	
 		if(!(anzahlHoelzer>=1 && anzahlHoelzer<=3)) {
-			System.err.println("Anzahl der Hoelzer ist 1, 2 oder 3.");
+			System.err.println("Anzahl der Hoelzer, die gezogen werden dürfen, ist 1, 2 oder 3.");
 			return 1;
 		} else if(!(schachtel.getAnzahlHoelzer() - anzahlHoelzer>=0)){
 			System.err.println("So viele Hoelzer sind nicht vorhanden.");

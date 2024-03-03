@@ -30,6 +30,9 @@ public class Schachtel {
 		this.anzahlHoelzer = anzahlHoelzer;
 	}
 	
+	/**
+	 * gibt die Anzhal der Hoelzer in der Schachtel in der Konsole aus.
+	 */
 	public void print() {
 		System.out.println("Anzahl Hoelzer: " + anzahlHoelzer);
 	}

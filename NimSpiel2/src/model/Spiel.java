@@ -57,11 +57,11 @@ public class Spiel {
 		Scanner s = new Scanner(System.in);
 		
 		//erfrageSpielernamen
-/*		System.out.print("Spieler 1: ");
+		//TODO: Fehler, wenn Namen aus mehr als einem Wort besteht.
+		System.out.print("Spieler 1: ");
 		spieler1.setName(s.next());
 		System.out.print("Spieler 2: ");
 		spieler2.setName(s.next());
-*/
 
 		//gibSpielanleitungAus
 		System.out.println("NIM-Spiel: "+ getAktuellerSpieler().getName() + " setzt die Anzahl der Hoelzer fest. Anschließend werden abwechselnd 1-3 Hoelzer genommen. Wer das letzte Holz zieht verliert.");
