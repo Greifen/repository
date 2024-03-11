@@ -45,6 +45,13 @@ public class Spieler {
 		}
 	}
 	
+	/**
+	 * Alternativ Methode mit nehmenWahr 
+	 * gibt zurück, ob nehmen erlaubt ist
+	 *
+	 */
+	
+	
 	public String getName() {
 		return name;
 	}
